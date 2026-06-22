@@ -5,9 +5,9 @@ import (
 	"encoding/base64"
 	"fmt"
 
-	xdr3 "github.com/stellar/go-xdr/xdr3"
 	"github.com/stellar/go-stellar-sdk/txnbuild"
 	"github.com/stellar/go-stellar-sdk/xdr"
+	xdr3 "github.com/stellar/go-xdr/xdr3"
 
 	"github.com/stellar/wallet-backend/pkg/utils"
 )

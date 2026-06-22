@@ -12,9 +12,9 @@ import (
 	"strings"
 	"testing"
 
-	xdr3 "github.com/stellar/go-xdr/xdr3"
 	"github.com/stellar/go-stellar-sdk/keypair"
 	"github.com/stellar/go-stellar-sdk/txnbuild"
+	xdr3 "github.com/stellar/go-xdr/xdr3"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
