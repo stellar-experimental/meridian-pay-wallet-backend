@@ -6,12 +6,12 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/stellar/go/asset"
-	"github.com/stellar/go/ingest"
-	ttp "github.com/stellar/go/processors/token_transfer"
-	"github.com/stellar/go/support/log"
-	"github.com/stellar/go/toid"
-	"github.com/stellar/go/xdr"
+	"github.com/stellar/go-stellar-sdk/asset"
+	"github.com/stellar/go-stellar-sdk/ingest"
+	ttp "github.com/stellar/go-stellar-sdk/processors/token_transfer"
+	"github.com/stellar/go-stellar-sdk/support/log"
+	"github.com/stellar/go-stellar-sdk/toid"
+	"github.com/stellar/go-stellar-sdk/xdr"
 
 	"github.com/stellar/wallet-backend/internal/indexer/types"
 )

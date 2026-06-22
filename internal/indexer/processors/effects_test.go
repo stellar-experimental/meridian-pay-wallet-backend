@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stellar/go/network"
-	operation_processor "github.com/stellar/go/processors/operation"
-	"github.com/stellar/go/toid"
+	"github.com/stellar/go-stellar-sdk/network"
+	operation_processor "github.com/stellar/wallet-backend/internal/sdkprocessors/operation"
+	"github.com/stellar/go-stellar-sdk/toid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 

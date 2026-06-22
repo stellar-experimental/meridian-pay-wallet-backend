@@ -4,10 +4,10 @@ import (
 	"testing"
 
 	set "github.com/deckarep/golang-set/v2"
-	"github.com/stellar/go/ingest"
-	"github.com/stellar/go/network"
-	operation_processor "github.com/stellar/go/processors/operation"
-	"github.com/stellar/go/xdr"
+	"github.com/stellar/go-stellar-sdk/ingest"
+	"github.com/stellar/go-stellar-sdk/network"
+	operation_processor "github.com/stellar/wallet-backend/internal/sdkprocessors/operation"
+	"github.com/stellar/go-stellar-sdk/xdr"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 

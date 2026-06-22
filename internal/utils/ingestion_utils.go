@@ -3,8 +3,8 @@ package utils
 import (
 	"strconv"
 
-	"github.com/stellar/go/toid"
-	"github.com/stellar/go/xdr"
+	"github.com/stellar/go-stellar-sdk/toid"
+	"github.com/stellar/go-stellar-sdk/xdr"
 )
 
 func OperationID(ledgerNumber, txNumber, opNumber int32) string {

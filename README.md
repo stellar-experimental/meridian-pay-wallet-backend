@@ -49,6 +49,7 @@ The wallet-backend provides two core services that simplify Stellar transaction 
 ### Transaction Building and Fee Bump
 
 1. **Transaction Building** (`POST /transactions/build`):
+
    - Uses pre-funded channel accounts to handle sequence numbers automatically
    - Provides high throughput by eliminating client-side sequence number management
    - Returns signed transaction XDRs ready for client signature
@@ -178,31 +179,33 @@ This setup is ideal for active development, allowing you to add debug points to 
 2. Run `api` and `ingest` locally:
 
    - **API**
-      1. Source the `.env` file:
 
-         ```bash
-         source .env
-         ```
+     1. Source the `.env` file:
 
-      2. Run migrations:
+        ```bash
+        source .env
+        ```
 
-         ```bash
-         go run main.go migrate up
-         ```
+     2. Run migrations:
 
-      3. Generate channel accounts:
+        ```bash
+        go run main.go migrate up
+        ```
 
-         ```bash
-         go run main.go channel-account ensure 5
-         ```
+     3. Generate channel accounts:
 
-      4. Start the API server:
+        ```bash
+        go run main.go channel-account ensure 5
+        ```
 
-         ```bash
-         go run main.go serve
-         ```
+     4. Start the API server:
+
+        ```bash
+        go run main.go serve
+        ```
 
    - **Ingest**
+
      1. In a separate terminal, source the `.env` file and run the ingestion service:
 
         ```bash
@@ -265,12 +268,12 @@ The JWT payload field should contain the following fields:
 - (default) `sub` – The subject of the JWT, which is the public key of the Stellar account that is being authenticated.
 - (custom) `methodAndPath` – The HTTP method and path of the request (e.g., `GET /transactions/b9d0b2292c4e09e8eb22d036171491e87b8d2086bf8b265874c8d182cb9c9020`).
 - (custom) `bodyHash`, a hex-encoded SHA-256 hash of the raw HTTP request body, present even when the body is empty:
-   ```go
-   func HashBody(body []byte) string {
-      hashedBodyBytes := sha256.Sum256(body)
-      return hex.EncodeToString(hashedBodyBytes[:])
-   }
-   ```
+  ```go
+  func HashBody(body []byte) string {
+     hashedBodyBytes := sha256.Sum256(body)
+     return hex.EncodeToString(hashedBodyBytes[:])
+  }
+  ```
 
 For more details on the JWT implementation, please see [`jwt_manager.go`](./pkg/wbclient/auth/jwt_manager.go).
 

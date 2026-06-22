@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	operation_processor "github.com/stellar/go/processors/operation"
-	"github.com/stellar/go/xdr"
+	operation_processor "github.com/stellar/wallet-backend/internal/sdkprocessors/operation"
+	"github.com/stellar/go-stellar-sdk/xdr"
 
 	"github.com/stellar/wallet-backend/internal/indexer/types"
 )
