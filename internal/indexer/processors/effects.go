@@ -9,13 +9,12 @@ import (
 	"strconv"
 
 	"github.com/stellar/go-stellar-sdk/ingest"
-	effects "github.com/stellar/wallet-backend/internal/sdkprocessors/effects"
-	operation_processor "github.com/stellar/wallet-backend/internal/sdkprocessors/operation"
+	"github.com/stellar/go-stellar-sdk/support/log"
 	"github.com/stellar/go-stellar-sdk/xdr"
 
-	"github.com/stellar/go-stellar-sdk/support/log"
-
 	"github.com/stellar/wallet-backend/internal/indexer/types"
+	effects "github.com/stellar/wallet-backend/internal/sdkprocessors/effects"
+	operation_processor "github.com/stellar/wallet-backend/internal/sdkprocessors/operation"
 )
 
 const (

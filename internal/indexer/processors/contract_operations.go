@@ -9,8 +9,8 @@ import (
 	"github.com/stellar/go-stellar-sdk/strkey"
 	"github.com/stellar/go-stellar-sdk/xdr"
 
-	"github.com/stellar/wallet-backend/internal/utils"
 	operation_processor "github.com/stellar/wallet-backend/internal/sdkprocessors/operation"
+	"github.com/stellar/wallet-backend/internal/utils"
 )
 
 var (
