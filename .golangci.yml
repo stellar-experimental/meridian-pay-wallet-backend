@@ -38,6 +38,8 @@ linters:
     paths:
       # mocks are ignored
       - ".*.mock.*\\.go$"
+      # ported upstream code from stellar/go, not subject to our lint rules
+      - "internal/sdkprocessors/.*\\.go$"
 
     rules:
       - path: _test\.go

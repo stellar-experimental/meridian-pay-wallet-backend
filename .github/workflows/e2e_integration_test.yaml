@@ -34,7 +34,7 @@ jobs:
         shell: bash
 
       - name: Run Docker Compose (Without RPC)
-        run: docker compose -f docker-compose.yaml up --build -V -d wb-api wb-ingest --wait --scale stellar-rpc=0
+        run: docker compose -f docker-compose.yaml up --build -V -d wb-api wb-ingest --wait
         shell: bash
 
       - name: Run Integration Tests
