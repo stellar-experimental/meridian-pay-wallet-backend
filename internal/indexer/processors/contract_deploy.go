@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 
-	operation_processor "github.com/stellar/wallet-backend/internal/sdkprocessors/operation"
 	"github.com/stellar/go-stellar-sdk/xdr"
 
 	"github.com/stellar/wallet-backend/internal/indexer/types"
+	operation_processor "github.com/stellar/wallet-backend/internal/sdkprocessors/operation"
 )
 
 // ContractDeployProcessor emits state changes for contract deployments.
