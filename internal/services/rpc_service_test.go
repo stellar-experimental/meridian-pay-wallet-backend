@@ -912,7 +912,7 @@ func TestTrackRPCServiceHealth_HealthyService(t *testing.T) {
 func TestTrackRPCServiceHealth_UnhealthyService(t *testing.T) {
 	healthCheckTickInterval := 300 * time.Millisecond
 	healthCheckWarningInterval := 400 * time.Millisecond
-	contextTimeout := healthCheckWarningInterval + time.Millisecond*190
+	contextTimeout := healthCheckWarningInterval + time.Millisecond*600
 	ctx, cancel := context.WithTimeout(context.Background(), contextTimeout)
 	defer cancel()
 

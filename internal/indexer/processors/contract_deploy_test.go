@@ -7,12 +7,12 @@ import (
 	"testing"
 
 	"github.com/stellar/go-stellar-sdk/network"
-	operation_processor "github.com/stellar/wallet-backend/internal/sdkprocessors/operation"
 	"github.com/stellar/go-stellar-sdk/xdr"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
 	"github.com/stellar/wallet-backend/internal/indexer/types"
+	operation_processor "github.com/stellar/wallet-backend/internal/sdkprocessors/operation"
 	"github.com/stellar/wallet-backend/internal/utils"
 )
 
