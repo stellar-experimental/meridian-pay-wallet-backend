@@ -2,24 +2,23 @@ package effects
 
 import (
 	"encoding/base64"
-	"time"
-
 	"fmt"
 	"reflect"
 	"sort"
 	"strconv"
+	"time"
 
 	"github.com/guregu/null"
 	"github.com/stellar/go-stellar-sdk/amount"
 	"github.com/stellar/go-stellar-sdk/ingest"
 	"github.com/stellar/go-stellar-sdk/keypair"
-	operations "github.com/stellar/wallet-backend/internal/sdkprocessors/operation"
-	"github.com/stellar/wallet-backend/internal/sdkprocessors/utils"
 	"github.com/stellar/go-stellar-sdk/protocols/horizon/base"
 	"github.com/stellar/go-stellar-sdk/strkey"
 	"github.com/stellar/go-stellar-sdk/support/contractevents"
 	"github.com/stellar/go-stellar-sdk/support/errors"
 	"github.com/stellar/go-stellar-sdk/xdr"
+	operations "github.com/stellar/wallet-backend/internal/sdkprocessors/operation"
+	"github.com/stellar/wallet-backend/internal/sdkprocessors/utils"
 )
 
 // EffectOutput is a representation of an operation that aligns with the BigQuery table history_effects
@@ -1230,7 +1229,8 @@ func (e *effectsWrapper) addTrustLineFlagsEffect(
 	trustor *xdr.AccountId,
 	asset xdr.Asset,
 	setFlags *xdr.Uint32,
-	clearFlags *xdr.Uint32) {
+	clearFlags *xdr.Uint32,
+) {
 	details := map[string]interface{}{
 		"trustor": trustor.Address(),
 	}

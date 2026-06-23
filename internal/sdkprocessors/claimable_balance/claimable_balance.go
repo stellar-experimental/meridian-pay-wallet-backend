@@ -6,9 +6,9 @@ import (
 
 	"github.com/guregu/null"
 	"github.com/stellar/go-stellar-sdk/ingest"
+	"github.com/stellar/go-stellar-sdk/xdr"
 	asset "github.com/stellar/wallet-backend/internal/sdkprocessors/asset"
 	"github.com/stellar/wallet-backend/internal/sdkprocessors/utils"
-	"github.com/stellar/go-stellar-sdk/xdr"
 )
 
 // ClaimableBalanceOutput is a representation of a claimable balances that aligns with the BigQuery table claimable_balances

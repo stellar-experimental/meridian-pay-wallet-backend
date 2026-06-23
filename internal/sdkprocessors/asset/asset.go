@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/stellar/wallet-backend/internal/sdkprocessors/utils"
 	"github.com/stellar/go-stellar-sdk/toid"
 	"github.com/stellar/go-stellar-sdk/xdr"
+	"github.com/stellar/wallet-backend/internal/sdkprocessors/utils"
 )
 
 // AssetOutput is a representation of an asset that aligns with the BigQuery table history_assets

@@ -109,7 +109,8 @@ func AddLPOperations(txMeta []xdr.OperationMeta, AssetA, AssetB xdr.Asset) []xdr
 					},
 				},
 			},
-		}})
+		},
+	})
 
 	return txMeta
 }

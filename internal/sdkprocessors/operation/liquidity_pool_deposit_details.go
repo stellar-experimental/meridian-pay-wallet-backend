@@ -86,7 +86,7 @@ func (o *LedgerOperation) LiquidityPoolDepositDetails() (LiquidityPoolDepositDet
 	liquidityPoolDepositDetail.ReserveAssetA.AssetType = assetAType
 	liquidityPoolDepositDetail.ReserveAssetA.DepositAmount = int64(depositedA)
 
-	//Process ReserveB Details
+	// Process ReserveB Details
 	var assetBCode, assetBIssuer, assetBType string
 	err = assetB.Extract(&assetBType, &assetBCode, &assetBIssuer)
 	if err != nil {

@@ -13,13 +13,13 @@ import (
 
 	"github.com/stellar/go-stellar-sdk/amount"
 	"github.com/stellar/go-stellar-sdk/ingest"
-	claimablebalance "github.com/stellar/wallet-backend/internal/sdkprocessors/claimable_balance"
-	"github.com/stellar/wallet-backend/internal/sdkprocessors/utils"
 	"github.com/stellar/go-stellar-sdk/protocols/horizon/base"
 	"github.com/stellar/go-stellar-sdk/strkey"
 	"github.com/stellar/go-stellar-sdk/support/contractevents"
 	"github.com/stellar/go-stellar-sdk/toid"
 	"github.com/stellar/go-stellar-sdk/xdr"
+	claimablebalance "github.com/stellar/wallet-backend/internal/sdkprocessors/claimable_balance"
+	"github.com/stellar/wallet-backend/internal/sdkprocessors/utils"
 )
 
 // OperationOutput is a representation of an operation that aligns with the BigQuery table history_operations
@@ -28,7 +28,7 @@ type OperationOutput struct {
 	SourceAccountMuxed   string                 `json:"source_account_muxed,omitempty"`
 	Type                 int32                  `json:"type"`
 	TypeString           string                 `json:"type_string"`
-	OperationDetails     map[string]interface{} `json:"details"` //Details is a JSON object that varies based on operation type
+	OperationDetails     map[string]interface{} `json:"details"` // Details is a JSON object that varies based on operation type
 	TransactionID        int64                  `json:"transaction_id"`
 	OperationID          int64                  `json:"id"`
 	ClosedAt             time.Time              `json:"closed_at"`
@@ -47,7 +47,7 @@ type liquidityPoolDelta struct {
 // TransformOperation converts an operation from the history archive ingestion system into a form suitable for BigQuery
 func TransformOperation(operation xdr.Operation, operationIndex int32, transaction ingest.LedgerTransaction, ledgerSeq int32, ledgerCloseMeta xdr.LedgerCloseMeta, network string) (OperationOutput, error) {
 	outputTransactionID := toid.New(ledgerSeq, int32(transaction.Index), 0).ToInt64()
-	outputOperationID := toid.New(ledgerSeq, int32(transaction.Index), operationIndex+1).ToInt64() //operationIndex needs +1 increment to stay in sync with ingest package
+	outputOperationID := toid.New(ledgerSeq, int32(transaction.Index), operationIndex+1).ToInt64() // operationIndex needs +1 increment to stay in sync with ingest package
 
 	sourceAccount := getOperationSourceAccount(operation, transaction)
 	outputSourceAccount, err := utils.GetAccountAddressFromMuxedAccount(sourceAccount)
@@ -510,7 +510,7 @@ func transformPath(initialPath []xdr.Asset) []utils.Path {
 	if len(initialPath) == 0 {
 		return nil
 	}
-	var path = make([]utils.Path, 0)
+	path := make([]utils.Path, 0)
 	for _, pathAsset := range initialPath {
 		var assetType, code, issuer string
 		err := pathAsset.Extract(&assetType, &code, &issuer)
@@ -943,7 +943,6 @@ func extractOperationDetails(operation xdr.Operation, transaction ingest.LedgerT
 		}
 		if op.SetFlags > 0 {
 			addTrustLineFlagToDetails(details, xdr.TrustLineFlags(op.SetFlags), "set")
-
 		}
 		if op.ClearFlags > 0 {
 			addTrustLineFlagToDetails(details, xdr.TrustLineFlags(op.ClearFlags), "clear")
@@ -980,7 +979,7 @@ func extractOperationDetails(operation xdr.Operation, transaction ingest.LedgerT
 		}
 		details["reserve_a_deposit_amount"] = depositA
 
-		//Process ReserveB Details
+		// Process ReserveB Details
 		if err = addAssetDetailsToOperationDetails(details, assetB, "reserve_b"); err != nil {
 			return details, err
 		}
@@ -1364,7 +1363,7 @@ func (operation *TransactionOperationWrapper) Details() (map[string]interface{},
 			details["source_amount"] = amount.String(result.SendAmount())
 		}
 
-		var path = make([]map[string]interface{}, len(op.Path))
+		path := make([]map[string]interface{}, len(op.Path))
 		for i := range op.Path {
 			path[i] = make(map[string]interface{})
 			AddAssetDetails(path[i], op.Path[i], "")
@@ -1387,7 +1386,7 @@ func (operation *TransactionOperationWrapper) Details() (map[string]interface{},
 			details["amount"] = amount.String(result.DestAmount())
 		}
 
-		var path = make([]map[string]interface{}, len(op.Path))
+		path := make([]map[string]interface{}, len(op.Path))
 		for i := range op.Path {
 			path[i] = make(map[string]interface{})
 			AddAssetDetails(path[i], op.Path[i], "")
@@ -2242,7 +2241,7 @@ func (o *LedgerOperation) TypeString() string {
 }
 
 func (o *LedgerOperation) ID() int64 {
-	//operationIndex needs +1 increment to stay in sync with ingest package
+	// operationIndex needs +1 increment to stay in sync with ingest package
 	return toid.New(int32(o.Transaction.Ledger.LedgerSequence()), int32(o.Transaction.Index), o.OperationIndex+1).ToInt64()
 }
 
@@ -2738,7 +2737,7 @@ func (o *LedgerOperation) TransformPath(initialPath []xdr.Asset) []Path {
 	if len(initialPath) == 0 {
 		return nil
 	}
-	var path = make([]Path, 0)
+	path := make([]Path, 0)
 	for _, pathAsset := range initialPath {
 		var assetType, code, issuer string
 		err := pathAsset.Extract(&assetType, &code, &issuer)

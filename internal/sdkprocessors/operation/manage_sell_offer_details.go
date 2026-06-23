@@ -59,5 +59,4 @@ func (o *LedgerOperation) ManageSellOfferDetails() (ManageSellOffer, error) {
 	manageSellOffer.SellingAssetType = sellingAssetType
 
 	return manageSellOffer, nil
-
 }
