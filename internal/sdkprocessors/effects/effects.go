@@ -215,8 +215,7 @@ func Effects(operation *operations.TransactionOperationWrapper) ([]EffectOutput,
 	case xdr.OperationTypeCreatePassiveSellOffer:
 		err = wrapper.addCreatePassiveSellOfferEffect()
 	case xdr.OperationTypeSetOptions:
-		wrapper.addSetOptionsEffects()
-	case xdr.OperationTypeChangeTrust:
+		err = wrapper.addSetOptionsEffects()
 		err = wrapper.addChangeTrustEffects()
 	case xdr.OperationTypeAllowTrust:
 		err = wrapper.addAllowTrustEffects()
