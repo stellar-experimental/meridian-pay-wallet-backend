@@ -15,9 +15,9 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/sirupsen/logrus"
-	supporthttp "github.com/stellar/go/support/http"
-	"github.com/stellar/go/support/log"
-	"github.com/stellar/go/xdr"
+	supporthttp "github.com/stellar/go-stellar-sdk/support/http"
+	"github.com/stellar/go-stellar-sdk/support/log"
+	"github.com/stellar/go-stellar-sdk/xdr"
 	"github.com/vektah/gqlparser/v2/ast"
 
 	"github.com/stellar/wallet-backend/internal/apptracker"

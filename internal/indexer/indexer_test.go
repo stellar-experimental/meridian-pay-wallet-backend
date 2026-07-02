@@ -7,16 +7,16 @@ import (
 	"testing"
 
 	set "github.com/deckarep/golang-set/v2"
-	"github.com/stellar/go/ingest"
-	"github.com/stellar/go/network"
-	operation_processor "github.com/stellar/go/processors/operation"
-	"github.com/stellar/go/xdr"
+	"github.com/stellar/go-stellar-sdk/ingest"
+	"github.com/stellar/go-stellar-sdk/network"
+	"github.com/stellar/go-stellar-sdk/xdr"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"github.com/stretchr/testify/require"
 
 	"github.com/stellar/wallet-backend/internal/indexer/processors"
 	"github.com/stellar/wallet-backend/internal/indexer/types"
+	operation_processor "github.com/stellar/wallet-backend/internal/sdkprocessors/operation"
 )
 
 var (

@@ -22,6 +22,7 @@ linters:
     - unused
     - unconvert
     - unparam
+    - exhaustive
 
   settings:
     staticcheck:
@@ -33,11 +34,20 @@ linters:
     errcheck:
       # report about assignment of errors to blank identifier: `num, _ := strconv.Atoi(numStr)`.
       check-blank: true
+    
+    exhaustive:
+      check:
+        - switch
+        - map
+      explicitly-exhaustive-switch: true
+      default-signifies-exhaustive: true
 
   exclusions:
     paths:
       # mocks are ignored
       - ".*.mock.*\\.go$"
+      # ported upstream code from stellar/go, not subject to our lint rules
+      - "internal/sdkprocessors/.*\\.go$"
 
     rules:
       - path: _test\.go

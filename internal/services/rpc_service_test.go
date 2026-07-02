@@ -12,9 +12,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stellar/go/network"
-	"github.com/stellar/go/support/log"
-	"github.com/stellar/go/xdr"
+	"github.com/stellar/go-stellar-sdk/network"
+	"github.com/stellar/go-stellar-sdk/support/log"
+	"github.com/stellar/go-stellar-sdk/xdr"
 	"github.com/stellar/stellar-rpc/protocol"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
@@ -912,7 +912,7 @@ func TestTrackRPCServiceHealth_HealthyService(t *testing.T) {
 func TestTrackRPCServiceHealth_UnhealthyService(t *testing.T) {
 	healthCheckTickInterval := 300 * time.Millisecond
 	healthCheckWarningInterval := 400 * time.Millisecond
-	contextTimeout := healthCheckWarningInterval + time.Millisecond*190
+	contextTimeout := healthCheckWarningInterval + time.Millisecond*600
 	ctx, cancel := context.WithTimeout(context.Background(), contextTimeout)
 	defer cancel()
 

@@ -3,7 +3,7 @@ package httphandler
 import (
 	"net/http"
 
-	"github.com/stellar/go/support/render/httpjson"
+	"github.com/stellar/go-stellar-sdk/support/render/httpjson"
 
 	"github.com/stellar/wallet-backend/internal/apptracker"
 	"github.com/stellar/wallet-backend/internal/data"

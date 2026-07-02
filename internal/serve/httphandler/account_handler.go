@@ -4,8 +4,8 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/stellar/go/support/render/httpjson"
-	"github.com/stellar/go/txnbuild"
+	"github.com/stellar/go-stellar-sdk/support/render/httpjson"
+	"github.com/stellar/go-stellar-sdk/txnbuild"
 
 	"github.com/stellar/wallet-backend/internal/apptracker"
 	"github.com/stellar/wallet-backend/internal/entities"

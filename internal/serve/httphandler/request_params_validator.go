@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"github.com/go-playground/validator/v10"
-	"github.com/stellar/go/support/http/httpdecode"
+	"github.com/stellar/go-stellar-sdk/support/http/httpdecode"
 
 	"github.com/stellar/wallet-backend/internal/apptracker"
 	"github.com/stellar/wallet-backend/internal/serve/httperror"

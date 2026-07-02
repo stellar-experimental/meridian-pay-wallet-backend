@@ -6,11 +6,11 @@ import (
 	"fmt"
 
 	set "github.com/deckarep/golang-set/v2"
-	"github.com/stellar/go/ingest"
-	operation_processor "github.com/stellar/go/processors/operation"
+	"github.com/stellar/go-stellar-sdk/ingest"
 
 	"github.com/stellar/wallet-backend/internal/indexer/processors"
 	"github.com/stellar/wallet-backend/internal/indexer/types"
+	operation_processor "github.com/stellar/wallet-backend/internal/sdkprocessors/operation"
 )
 
 type IndexerBufferInterface interface {

@@ -3,9 +3,9 @@ package processors
 import (
 	"fmt"
 
-	"github.com/stellar/go/ingest"
-	"github.com/stellar/go/toid"
-	"github.com/stellar/go/xdr"
+	"github.com/stellar/go-stellar-sdk/ingest"
+	"github.com/stellar/go-stellar-sdk/toid"
+	"github.com/stellar/go-stellar-sdk/xdr"
 
 	"github.com/stellar/wallet-backend/internal/indexer/types"
 )

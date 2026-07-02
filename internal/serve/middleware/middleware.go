@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/stellar/go/support/log"
+	"github.com/stellar/go-stellar-sdk/support/log"
 
 	"github.com/stellar/wallet-backend/internal/apptracker"
 	"github.com/stellar/wallet-backend/internal/metrics"
