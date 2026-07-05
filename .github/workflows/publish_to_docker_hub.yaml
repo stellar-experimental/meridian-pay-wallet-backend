@@ -22,7 +22,7 @@ jobs:
       - tests
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Release tag cannot be empty
         run: |
@@ -57,7 +57,7 @@ jobs:
       - tests
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Docker Tags & SHA
         id: get_info
